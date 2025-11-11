@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            width: 420px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .safe {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .unsafe {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>💧 Water Quality Result</h1>
+        {% if prediction == 'Safe' %}
+            <p class="safe">✅ The water is Safe to drink!</p>
+        {% else %}
+            <p class="unsafe">⚠️ The water is Unsafe to drink!</p>
+        {% endif %}
+        <a href="/" class="back-btn">← Go Back</a>
+    </div>
+</body>
+</html>

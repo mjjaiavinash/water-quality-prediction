@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Water Quality Prediction</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="card">
+            <h1>💧 Water Quality Prediction</h1>
+            <p class="subtitle">Enter the water parameters below to check if the water is safe for drinking.</p>
+            <form action="/predict_waterQ" method="POST" class="form-grid">
+
+                <div class="form-group full">
+                    <label for="ph">pH Level</label>
+                    <input type="number" id="ph" name="ph" placeholder="Enter pH value (6.5–8.5)" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="hardness">Hardness</label>
+                    <input type="number" id="hardness" name="hardness" placeholder="mg/L (e.g., 180)" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="conductivity">Conductivity</label>
+                    <input type="number" id="conductivity" name="conductivity" placeholder="µS/cm (e.g., 400)" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="solids">Total Dissolved Solids (TDS)</label>
+                    <input type="number" id="solids" name="solids" placeholder="mg/L (e.g., 500)" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="organicCarbon">Organic Carbon</label>
+                    <input type="number" id="organicCarbon" name="organicCarbon" placeholder="mg/L (e.g., 12)" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="chloramines">Chloramines</label>
+                    <input type="number" id="chloramines" name="chloramines" placeholder="mg/L (e.g., 8)" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="trihalomethanes">Trihalomethanes</label>
+                    <input type="number" id="trihalomethanes" name="trihalomethanes" placeholder="µg/L (e.g., 70)" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sulfate">Sulfate</label>
+                    <input type="number" id="sulfate" name="sulfate" placeholder="mg/L (e.g., 250)" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="turbidity">Turbidity</label>
+                    <input type="number" id="turbidity" name="turbidity" placeholder="NTU (e.g., 3)" step="0.01" required>
+                </div>
+
+                <button type="submit" class="predict-btn">🔍 Predict Water Quality</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
